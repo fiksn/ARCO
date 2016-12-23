@@ -50,12 +50,12 @@ bool AppInit(int argc, char* argv[])
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
             // First part of help message is specific to bitcoind / RPC client
-            std::string strUsage = _("BlackCoin version") + " " + FormatFullVersion() + "\n\n" +
+            std::string strUsage = _("AquariusCoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  blackcoind [options]                     " + "\n" +
-                  "  blackcoind [options] <command> [params]  " + _("Send command to -server or blackcoind") + "\n" +
-                  "  blackcoind [options] help                " + _("List commands") + "\n" +
-                  "  blackcoind [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  aquariuscoind [options]                     " + "\n" +
+                  "  aquariuscoind [options] <command> [params]  " + _("Send command to -server or aquariuscoind") + "\n" +
+                  "  aquariuscoind [options] help                " + _("List commands") + "\n" +
+                  "  aquariuscoind [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -65,13 +65,13 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "blackcoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "aquariuscoin:"))
                 fCommandLine = true;
 
         if (fCommandLine)
         {
             if (!SelectParamsFromCommandLine()) {
-                fprintf(stderr, "Error: invalid combination of -regtest and -testnet.\n");
+                fprintf(stderr, "Error: invalid combination of -testnet.\n");
                 return false;
             }
             int ret = CommandLineRPC(argc, argv);

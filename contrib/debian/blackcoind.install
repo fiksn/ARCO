@@ -1,2 +1,2 @@
-debian/bin/blackcoind usr/bin
-src/blackcoind usr/lib/blackcoin
+debian/bin/aquariuscoind usr/bin
+src/aquariuscoind usr/lib/aquariuscoin

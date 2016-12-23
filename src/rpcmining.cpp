@@ -70,10 +70,10 @@ Value getstakesubsidy(const Array& params, bool fHelp)
 
     uint64_t nCoinAge;
     CTxDB txdb("r");
-    if (!tx.GetCoinAge(txdb, pindexBest, nCoinAge))
+    if (!tx.GetCoinAge(txdb, nCoinAge))
         throw JSONRPCError(RPC_MISC_ERROR, "GetCoinAge failed");
 
-    return (uint64_t)GetProofOfStakeReward(pindexBest, nCoinAge, 0);
+    return (uint64_t)GetProofOfStakeReward(nCoinAge, 0, pindexBest->nHeight + 1);
 }
 
 Value getmininginfo(const Array& params, bool fHelp)
@@ -149,6 +149,7 @@ Value getstakinginfo(const Array& params, bool fHelp)
     return obj;
 }
 
+
 Value checkkernel(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
@@ -163,10 +164,10 @@ Value checkkernel(const Array& params, bool fHelp)
     bool fCreateBlockTemplate = params.size() > 1 ? params[1].get_bool() : false;
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "BlackCoin is not connected!");
+        throw JSONRPCError(-9, "AquariusCoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "BlackCoin is downloading blocks...");
+        throw JSONRPCError(-10, "AquariusCoin is downloading blocks...");
 
     COutPoint kernel;
     CBlockIndex* pindexPrev = pindexBest;
@@ -235,6 +236,7 @@ Value checkkernel(const Array& params, bool fHelp)
     return result;
 }
 
+
 Value getworkex(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 2)
@@ -244,10 +246,10 @@ Value getworkex(const Array& params, bool fHelp)
         );
 
     if (vNodes.empty())
-        throw JSONRPCError(-9, "BlackCoin is not connected!");
+        throw JSONRPCError(-9, "AquariusCoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(-10, "BlackCoin is downloading blocks...");
+        throw JSONRPCError(-10, "AquariusCoin is downloading blocks...");
 
     if (pindexBest->nHeight >= Params().LastPOWBlock())
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
@@ -378,10 +380,10 @@ Value getwork(const Array& params, bool fHelp)
             "If [data] is specified, tries to solve the block and returns true if it was successful.");
 
     if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "BlackCoin is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "AquariusCoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "BlackCoin is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "AquariusCoin is downloading blocks...");
 
     if (pindexBest->nHeight >= Params().LastPOWBlock())
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
@@ -522,10 +524,10 @@ Value getblocktemplate(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
     if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "BlackCoin is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "AquariusCoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "BlackCoin is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "AquariusCoin is downloading blocks...");
 
     if (pindexBest->nHeight >= Params().LastPOWBlock())
         throw JSONRPCError(RPC_MISC_ERROR, "No more PoW blocks");
@@ -697,4 +699,3 @@ Value submitblock(const Array& params, bool fHelp)
 
     return Value::null;
 }
-

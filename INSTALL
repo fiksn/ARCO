@@ -1,9 +1,9 @@
-Building BlackCoin
+Building AquariusCoin
 
-See doc/readme-qt.rst for instructions on building BlackCoin QT,
+See doc/readme-qt.rst for instructions on building AquariusCoin QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of BlackCoin.
+implementation of AquariusCoin.
 
-See doc/build-*.txt for instructions on building blackcoind,
+See doc/build-*.txt for instructions on building aquariuscoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of BlackCoin.
+implementation of AquariusCoin.
