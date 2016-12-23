@@ -1,7 +1,7 @@
+Aquariuscoin port to Blackcoins code.
 
-BlackCoin development tree
+Work in progress, DO NOT USE FOR PRODUCTION YET!
 
-BlackCoin is a PoS-based cryptocurrency.
 
 Development process
 ===========================
