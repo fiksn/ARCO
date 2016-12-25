@@ -57,11 +57,13 @@ static const int64_t COIN_YEAR_REWARD2 = 6 * CENT;  // fork at block 70000 = IsR
 
 inline bool IsRewardHF(int nHeight) { return TestNet() || nHeight > 70000; } // initialize fixed 1 COIN (with halving) + 6% reward
 inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 589289; } // ARCO birthday HardFork to v2 Protocol
+inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1489900000; } // GMT: Sun, 19 Mar 2017 05:06:40 GMT
+
+inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 10 * 60; }
+inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
+inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
 
 inline unsigned int GetTargetSpacing(int nHeight) { return IsProtocolV2(nHeight) ? 64 : 60; }
-
-inline int64_t FutureDrift(int64_t nTime, int nHeight) { return nTime + 10 * 60; }
-inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 10 * 60; }
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
@@ -400,7 +402,7 @@ public:
                        std::map<uint256, CTxIndex>& mapTestPool, const CDiskTxPos& posThisTx,
                        const CBlockIndex* pindexBlock, bool fBlock, bool fMiner, unsigned int flags = STANDARD_SCRIPT_VERIFY_FLAGS);
     bool CheckTransaction() const;
-    bool GetCoinAge(CTxDB& txdb, uint64_t& nCoinAge) const; // ppcoin: get transaction coin age
+    bool GetCoinAge(CTxDB& txdb, const CBlockIndex* pindexPrev, uint64_t& nCoinAge) const; // ppcoin: get transaction coin age
 
     const CTxOut& GetOutputFor(const CTxIn& input, const MapPrevTx& inputs) const;
 };
