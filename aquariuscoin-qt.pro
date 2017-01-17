@@ -1,6 +1,6 @@
 TEMPLATE = app
 TARGET = aquariuscoin-qt
-VERSION = 1.2.2
+VERSION = 2.0.0
 INCLUDEPATH += src src/json src/qt
 QT += network
 DEFINES += ENABLE_WALLET
