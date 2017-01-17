@@ -1350,6 +1350,9 @@ Value walletpassphrase(const Array& params, bool fHelp)
     else
         fWalletUnlockStakingOnly = false;
 
+    Object ret;
+    ret.push_back(Pair("Unlocked for staking only", fWalletUnlockStakingOnly));
+
     return Value::null;
 }
 
@@ -1553,7 +1556,7 @@ Value makekeypair(const Array& params, bool fHelp)
     string strPrefix = "";
     if (params.size() > 0)
         strPrefix = params[0].get_str();
- 
+
     CKey key;
     key.MakeNewKey(false);
 
