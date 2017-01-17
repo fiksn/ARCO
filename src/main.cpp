@@ -40,7 +40,6 @@ map<uint256, CBlockIndex*> mapBlockIndex;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
-CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 
 int nStakeMinConfirmations = 20;
 unsigned int nStakeMinAge = 8 * 60 * 60; // 8 hours
@@ -964,9 +963,6 @@ void static PruneOrphanBlocks()
 */
 static CBigNum GetProofOfStakeLimit(int nHeight)
 {
-    if (IsProtocolV2(nHeight))
-        return bnProofOfStakeLimitV2;
-    else
         return bnProofOfStakeLimit;
 }
 
