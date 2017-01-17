@@ -56,8 +56,8 @@ static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% per year
 static const int64_t COIN_YEAR_REWARD2 = 6 * CENT;  // fork at block 70000 = IsRewardHF
 
 inline bool IsRewardHF(int nHeight) { return TestNet() || nHeight > 70000; } // initialize fixed 1 COIN (with halving) + 6% reward
-inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 513200; } // 589289 ARCO  HardFork to v2 Protocol
-inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1484608627; } // 1489900000 GMT: Sun, 19 Mar 2017 05:06:40 GMT
+inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 589289; } // 589289 ARCO  HardFork to v2 Protocol
+inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1489900000; } // 1489900000 GMT: Sun, 19 Mar 2017 05:06:40 GMT
 
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 10 * 60; }
 inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
