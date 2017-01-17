@@ -1353,7 +1353,7 @@ Value walletpassphrase(const Array& params, bool fHelp)
     Object ret;
     ret.push_back(Pair("Unlocked for staking only", fWalletUnlockStakingOnly));
 
-    return Value::null;
+    return ret;
 }
 
 
