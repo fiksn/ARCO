@@ -1,7 +1,6 @@
 Aquariuscoin port to Blackcoins code.
 
-Work in progress, DO NOT USE FOR PRODUCTION YET!
-
+Update to this version before block 589289.
 
 Development process
 ===========================
@@ -28,5 +27,5 @@ after the warning if action is not taken by the author. Pull requests closed
 in this manner will have their corresponding issue labeled 'stagnant'.
 
 Issues with no commits will be given a similar warning, and closed after
-15 days from their last activity. Issues closed in this manner will be 
+15 days from their last activity. Issues closed in this manner will be
 labeled 'stale'.
