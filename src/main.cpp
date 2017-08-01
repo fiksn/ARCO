@@ -2008,9 +2008,16 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) c
         return DoS(50, error("CheckBlock() : proof of work failed"));
 
     // Check timestamp
-    if (GetBlockTime() > FutureDriftV1(GetAdjustedTime()))
-        return error("CheckBlock() : block timestamp too far in the future");
-
+    if (IsProtocolV4(nTime))
+    {
+      if (GetBlockTime() > (FutureDriftV2(GetAdjustedTime())))
+          return error("CheckBlock() : block timestamp too far in the future");
+    }
+    else
+    {
+      if (GetBlockTime() > (FutureDriftV1(GetAdjustedTime())))
+          return error("CheckBlock() : block timestamp too far in the future");
+    }
     // First transaction must be coinbase, the rest must not be
     if (vtx.empty() || !vtx[0].IsCoinBase())
         return DoS(100, error("CheckBlock() : first tx is not coinbase"));
