@@ -1,6 +1,35 @@
-Aquariuscoin port to Blackcoins code.
+- Full name: AquariusCoin
 
-Update to this version before block 589289.
+- Ticker: ARCO 
+
+- Type: PoW/PoS hybrid (PoW stage is over)
+
+- Max Coins: 42000000 (42M ARCO)
+
+- PoW reward: 10000 ARCO 
+
+- Last PoW block: block height 10000 
+
+- PoS reward: 6% anually plus 1 ARCO fixed stake reward (5 year fixed  PoS reward halving)
+
+- Minimum PoS age: 7 hours
+
+- Maximum PoS age: unlimited
+
+- Block time target: 64 seconds
+
+- Difficulty retarget: every block
+
+- Coinbase maturity: 20 blocks
+
+- Transaction recommended minimum confirmations: 3 blocks
+
+- Minimal TX fee: 100 arcoshis (0.00000100 ARCO)
+
+- P2P port: 6205
+
+- RPC port: 6206
+
 
 Development process
 ===========================
