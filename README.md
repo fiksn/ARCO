@@ -29,3 +29,31 @@ in this manner will have their corresponding issue labeled 'stagnant'.
 Issues with no commits will be given a similar warning, and closed after
 15 days from their last activity. Issues closed in this manner will be
 labeled 'stale'.
+
+## Get in touch or stay updated:
+
+- Forum: https://bitcointalk.org/index.php?topic=1694341.0
+
+- Twitter: https://twitter.com/ArcCoin
+
+- Web: https://aquariuscoin.com
+
+- Facebook: https://www.facebook.com/aquarius.coin
+
+- Telegram: https://t.me/BlockmasterSi
+
+- Medium: https://medium.com/@BlockmasterSi/
+
+- CoinmarketCap: https://coinmarketcap.com/currencies/aquuariuscoin/
+
+- Coinpaprika: https://coinpaprika.com/coin/arco-aquariuscoin/
+
+- Blockexplorer: https://chainz.cryptoid.info/arco/
+
+- Instagram: https://www.instagram.com/aquariuscoin/
+
+- Youtube: https://www.youtube.com/channel/UCQNanILOjs-G3DiO29l7GQg
+
+- Reddit: https://www.reddit.com/r/BlockmasterSi
+
+- Mobile wallet for android: https://play.google.com/store/apps/details?id=com.cryptowallet.si
