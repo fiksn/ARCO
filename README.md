@@ -30,6 +30,14 @@
 
 - RPC port: 6206
 
+AquariusCoin blockchain snapshots/chain states/bootstrap.dat (pCloud: http://pc.cd/n3RotalK )
+
+Responsible disclosure and security contact: security@aquariuscoin.com
+
+Exchanges and listing contact (digital currency exchange representatives should take note Arco is an open source network with no premine/instamine or any type of crowdfunding and no listing fee budget is awailable): listings@aquariuscoin.com
+
+Developers contact: dev@aquariuscoin.com
+
 
 Development process
 ===========================
