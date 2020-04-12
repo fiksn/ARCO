@@ -71,7 +71,7 @@ labeled 'stale'.
 
 - Forum: https://bitcointalk.org/index.php?topic=1694341.0
 
-- Twitter: https://twitter.com/ArcCoin
+- Twitter: https://twitter.com/AquariusARCO
 
 - Web: https://aquariuscoin.com
 
